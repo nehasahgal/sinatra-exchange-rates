@@ -2,8 +2,12 @@ require "sinatra"
 require "sinatra/reloader"
 
 get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+
+ erb(:homepage)
+end
+
+get("/:country_one") do
+  @country_one = params.fetch("country_one")
+  erb(:country_one)
+  
 end
